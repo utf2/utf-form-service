@@ -17,7 +17,7 @@ type FormSearchByTeacherIDResponse struct {
 // Show form for student when answering
 // Show all forms assigned to student
 type FormSearchByIDsRequest struct {
-	FormID uuid.UUID
+	FormIDs uuid.UUIDs
 }
 
 type FormSearchByIDsResponse struct {
