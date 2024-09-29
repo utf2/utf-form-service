@@ -11,17 +11,24 @@ type FormSearchByTeacherIDRequest struct {
 }
 
 type FormSearchByTeacherIDResponse struct {
-	FormsCreatedByTeacher []FormDTO
+	FormsCreatedByTeacher []CreatedFormDTO
 }
 
-// Show form for student when answering
-// Show all forms assigned to student
-type FormSearchByIDsRequest struct {
-	FormIDs uuid.UUIDs
+type CreatedFormDTO struct {
+	ID          uuid.UUID
+	Name        string
+	Description string
+	CreateDate  time.Time
+	StartDate   time.Time
+	EndDate     time.Time
 }
 
-type FormSearchByIDsResponse struct {
-	Forms []FormDTO
+type FormSearchByIDRequest struct {
+	FormID uuid.UUID
+}
+
+type FormSearchByIDResponse struct {
+	Form FormDTO
 }
 
 type FormDTO struct {
